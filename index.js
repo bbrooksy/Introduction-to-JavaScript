@@ -17,8 +17,16 @@ Do the following:
 
    HINT: no function required
 */
+var votingAge = 18;
 
-
+if( votingAge > 18)
+{
+  console.log('yes');
+}
+else
+{
+  console.log ('no');
+}
 
 /*
 Task 1b - Values
@@ -30,9 +38,10 @@ Do the following:
 
    HINT: no function required
 */
-
-
-
+let myName = 'brandon';
+let myAge = 27;
+if(myName === myAge);
+console.log (myName);
 
 
 /*
@@ -45,9 +54,9 @@ Do the following:
 
    HINT: look up the Number method
 */
-
-
-
+var num1 = "1999";
+ var integer = parseInt(num1);
+ console.log(integer);
 
 /*
 Task 1d - Multiply
@@ -58,9 +67,10 @@ Do the following:
    3. Multiply a and b and return the answer
 */
 
-function multiply(/*add your code here*/){
-    /*add your code here*/
+function multiply(a, b){
+  return a * b;
   }
+  console.log (multiply(10,4));
 
 
 
@@ -74,10 +84,10 @@ Do the following:
    3. Return the newly calculated age
 */
 
-function dogYears(/*add your code here*/){
-    /*add your code here*/
+function dogYears(age =3){
+ return age * 7;
 }
-
+console.log(dogYears());
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -107,9 +117,31 @@ Use the hungryDog function and feeding requirements below to do the following:
   NOTE: If done correctly, a weight of 15 lbs and age of 1 year would return 0.44999999999999996
 */  
 
-function hungryDog(/*add your code here*/){
-    /*add your code here*/
+function hungryDog(age, pounds){
+   if (age >= 1 && pounds <= 5){
+      return pounds * .05
+    }
+  else if (age >= 1 && pounds <= 10 && pounds > 5){
+    return pounds * .04
+    }
+  else if (age >= 1 && pounds >= 15 && pounds >11){
+    return pounds * .03
   }
+  else if (age >= 1 && pounds > 15){
+    return pounds *.02
+  }
+  else if (age < 4/12){
+    return pounds * .01
+  }
+  else if (age < 7/12){
+    return pounds * .05
+  }
+  else {
+    return pounds *.04
+  }
+  };
+console.log(hungryDog(1,15));
+  
 
 
 
@@ -134,112 +166,160 @@ Use the game function below to do the following:
   HINT: Remember that the order in which we pass in our arguments matters when it comes to parameters
 */
 
-function game(user, computer){
-    /*add your code here*/
+function game(userChoice,computer){
+   computer = Math.random();
+     if (computer < 0.30) {
+         computer = "rock";
+     } else if(computer <= 0.55) {
+         computer = "paper";
+     } else {
+         computer = "scissors";
+     }
+     if(userChoice === computer) {
+       return "it's a tie";
+     }
+       userChoice === "paper";
+         if (computer === "rock") {
+           return "you win!";
+         } else {
+           return "you lose!";
+         }
+        userChoice === "scissors";
+           if (computer === "rock") {
+             return "you lose!";
+           } else {
+             return "you win!";
+           }
+         userChoice === "rock";
+       if (computer === "scissors") {
+         return "you win!";
+       } else {
+         return "you lose!";
+       }
+   };
+ console.log(game('paper'));
+
+
+
+
+      /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
+      //Metric Converter 
+      //Task 5a - KM to Miles 
+      /*
+      Using the miles function below do the following:
+        1. Receive a number of kilometers
+        2. Convert the number of kiolmeters received to miles
+        3. Return the number of miles
+      */
+      function miles(numKilo) {
+        return numKilo * 0.62137
+      }
+      console.log(miles(2));
+
+
+
+      //Task 5b - Feet to CM
+      /*
+      Using the feet function below do the following:
+        1. Receive a number of cm
+        2. Convert the number of cm to feet
+        3. Return number of feet
+      */
+      function feet(centi) {
+        return centi * 0.032808
+      }
+      console.log(feet(5));
+
+
+
+      /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
+      // Let's Sing 99 Bottles of Soda on the Wall!
+      /*
+      Using the annoyingSong function below do the following:
+        1. Receive a starting number and start the count down from the number received
+        2. At each invocation, it should RETURN this string (note: the tests are expecting the same string as below):
+            "{number} bottles of soda on the wall, {number} bottles of soda, take one down pass it around {number left over} bottles of soda on the wall"
+      */
+     function annoyingSong(bots) {  
+      let i = bots;
+      let botsLeft;
+      for (i = 5; i >= 1; i--) {
+        if (i == 1) {
+          bots = "bottles";
+        } else {
+          bots = "bottles";
+          botsLeft = i - 1 + " bottles of soda on the wall!";
+        } console.log(i+ " " + bots + " of soda on the wall,");
+        console.log(i+ " " + bots + " of soda,");
+        console.log("Take one down, pass it around,");
+        console.log(botsLeft);
+        } 
+    }
+    console.log(annoyingSong());
+
+
+      /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
+      //Grade Calculator
+      /*
+      Using the grade function below do the following:
+        1. Receive a score out of 100
+        2. Return the corresponding letter grade following this grade scale:
+      
+         90-100 should return 'you got an A'
+         80-89 should return 'you got a B'
+         70-79 should return 'you got a C'
+         60-69 should return 'you got a D'
+         below should return 'you got an F'
+      */
+     function grade(score) {
+      if(score>=90&&score<=100){
+        return ('you got a A');
+      }if(score >= 80&&score <= 89){
+   return ('you got a B');
+  }if(score>=70&&score<=79){
+      return ('you got a C');
+    }if(score>=60&&score <= 69){
+      return ( 'you got a D');
+}if(score<60){
+  return('you got an f');
 }
-  
-  
-
-/*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
-
-//Metric Converter 
-//Task 5a - KM to Miles 
-/*
-Using the miles function below do the following:
-  1. Receive a number of kilometers
-  2. Convert the number of kiolmeters received to miles
-  3. Return the number of miles
-*/
-
-function miles(/*add your code here*/){
-    /*add your code here*/
-  }
+};
+    console.log(grade(65));
 
 
 
-//Task 5b - Feet to CM
-/*
-Using the feet function below do the following:
-  1. Receive a number of cm
-  2. Convert the number of cm to feet
-  3. Return number of feet
-*/
-
-function feet(/*add your code here*/){
-    /*add your code here*/
-  }
- 
-
-
-/*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
-
-// Let's Sing 99 Bottles of Soda on the Wall!
-/*
-Using the annoyingSong function below do the following:
-  1. Receive a starting number and start the count down from the number received 
-  2. At each invocation, it should RETURN this string (note: the tests are expecting the same string as below):
-      "{number} bottles of soda on the wall, {number} bottles of soda, take one down pass it around {number left over} bottles of soda on the wall"
-*/
-
-function annoyingSong(/*add your code here*/){
+      /*💪💪💪💪💪💪💪💪💪💪 Stretch 💪💪💪💪💪💪💪💪💪💪*/
+      //Vowel Counter - How many vowels are there?
+      /*
+      Using the vowelCounter function below do the following:
+        1. Receive a string as a parameter
+        2. Count and return the number of vowels within that string.  It should handle both capitalized and uncapitalized vowels.
+      
+        HINT - you may need to study tomorrow's content on arrays
+        HINT - try looking up the .includes() method
+      */
+      function vowelCounter( /*add your code here*/) {
         /*add your code here*/
-  }
+      }
 
 
-/*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
-//Grade Calculator
-/*
-Using the grade function below do the following: 
-  1. Receive a score out of 100 
-  2. Return the corresponding letter grade following this grade scale:
-
-   90-100 should return 'you got an A' 
-   80-89 should return 'you got a B'
-   70-79 should return 'you got a C'
-   60-69 should return 'you got a D'
-   below should return 'you got an F'
-*/
+      /*🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑*/
+      function foo() {
+        //console.log('its working');
+        return 'bar';
+      }
+      /*🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 Don't touch the code after this line! 🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑*/
+      export default {
+        foo,
+        multiply,
+        dogYears,
+        hungryDog,
+        game,
+        miles,
+        feet,
+        annoyingSong,
+        grade
+      };
+    
   
-function grade(/*Your Code here */){
-  /*Your Code here */
-  }
-  
-  
-
-/*💪💪💪💪💪💪💪💪💪💪 Stretch 💪💪💪💪💪💪💪💪💪💪*/
-
-//Vowel Counter - How many vowels are there?
-/*
-Using the vowelCounter function below do the following:
-  1. Receive a string as a parameter
-  2. Count and return the number of vowels within that string.  It should handle both capitalized and uncapitalized vowels.
-
-  HINT - you may need to study tomorrow's content on arrays 
-  HINT - try looking up the .includes() method
-*/
-
-
-function vowelCounter(/*add your code here*/) {
-    /*add your code here*/
-}
-
-
-
-/*🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑*/
-function foo(){
-    //console.log('its working');
-    return 'bar';
-}
-/*🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 Don't touch the code after this line! 🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑*/
-export default{
-    foo,
-    multiply,
-    dogYears,
-    hungryDog,
-    game,
-    miles,
-    feet,
-    annoyingSong,
-    grade
-}
